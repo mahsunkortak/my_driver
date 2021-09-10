@@ -1,0 +1,10 @@
+18:26:57 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+
+18:26:58 Build Finished. 0 errors, 0 warnings. (took 334ms)
+

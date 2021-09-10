@@ -1,0 +1,1078 @@
+13:33:16 **** Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../my_driver/Src/RCC_API.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"my_driver/Src/RCC_API.d" -MT"my_driver/Src/RCC_API.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "my_driver/Src/RCC_API.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+../Src/main.c:23:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   23 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+Finished building: my_driver_project.list
+   text	   data	    bss	    dec	    hex	filename
+    676	      8	   1568	   2252	    8cc	my_driver_project.elf
+ 
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.bin
+ 
+14:43:32 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:13: warning: "RCC_AHB1ENR_GPIOAEN" redefined
+   13 | #define RCC_AHB1ENR_GPIOAEN()   do{ uint32_t tempValue = 0;                      \
+      | 
+In file included from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158: note: this is the location of the previous definition
+  158 | #define RCC_AHB1ENR_GPIOAEN   (RCC_AHB1ENR_GPIOAEN_MASK)
+      | 
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+14:44:05 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+14:45:28 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:13: warning: "RCC_AHB1ENR_GPIOAEN" redefined
+   13 | #define RCC_AHB1ENR_GPIOAEN()   do{ uint32_t tempValue = 0;                      \
+      | 
+In file included from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158: note: this is the location of the previous definition
+  158 | #define RCC_AHB1ENR_GPIOAEN   (RCC_AHB1ENR_GPIOAEN_MASK)
+      | 
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:14:59: error: 'RCC_TypeDef_t' {aka 'struct <anonymous>'} has no member named 'AHB1ENR'; did you mean 'RCC_AHB1ENR'?
+   14 |                                             SET_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN);             \
+      |                                                           ^~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:21:32: note: in definition of macro 'SET_BIT'
+   21 | #define SET_BIT(REG,BIT)    ( (REG) |= (BIT) )
+      |                                ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:14:68: error: 'RCC_AHB1ENR_GPIOAEN' undeclared (first use in this function)
+   14 |                                             SET_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN);             \
+      |                                                                    ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:21:41: note: in definition of macro 'SET_BIT'
+   21 | #define SET_BIT(REG,BIT)    ( (REG) |= (BIT) )
+      |                                         ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:14:68: note: each undeclared identifier is reported only once for each function it appears in
+   14 |                                             SET_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN);             \
+      |                                                                    ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:21:41: note: in definition of macro 'SET_BIT'
+   21 | #define SET_BIT(REG,BIT)    ( (REG) |= (BIT) )
+      |                                         ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:15:45: error: 'tempvalue' undeclared (first use in this function); did you mean 'tempValue'?
+   15 |                                             tempvalue = READ_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN); \
+      |                                             ^~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:15:72: error: 'RCC_TypeDef_t' {aka 'struct <anonymous>'} has no member named 'AHB1ENR'; did you mean 'RCC_AHB1ENR'?
+   15 |                                             tempvalue = READ_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN); \
+      |                                                                        ^~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:23:33: note: in definition of macro 'READ_BIT'
+   23 | #define READ_BIT(REG,BIT)    ( (REG) & (BIT) )
+      |                                 ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:13:46: warning: unused variable 'tempValue' [-Wunused-variable]
+   13 | #define RCC_AHB1ENR_GPIOAEN()   do{ uint32_t tempValue = 0;                      \
+      |                                              ^~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:46:20 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:13: warning: "RCC_AHB1ENR_GPIOAEN" redefined
+   13 | #define RCC_AHB1ENR_GPIOAEN()   do{ uint32_t tempValue = 0;                      \
+      | 
+In file included from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158: note: this is the location of the previous definition
+  158 | #define RCC_AHB1ENR_GPIOAEN   (RCC_AHB1ENR_GPIOAEN_MASK)
+      | 
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:14:59: error: 'RCC_TypeDef_t' {aka 'struct <anonymous>'} has no member named 'AHB1ENR'; did you mean 'RCC_AHB1ENR'?
+   14 |                                             SET_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN);             \
+      |                                                           ^~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:21:32: note: in definition of macro 'SET_BIT'
+   21 | #define SET_BIT(REG,BIT)    ( (REG) |= (BIT) )
+      |                                ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:14:68: error: 'RCC_AHB1ENR_GPIOAEN' undeclared (first use in this function)
+   14 |                                             SET_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN);             \
+      |                                                                    ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:21:41: note: in definition of macro 'SET_BIT'
+   21 | #define SET_BIT(REG,BIT)    ( (REG) |= (BIT) )
+      |                                         ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:14:68: note: each undeclared identifier is reported only once for each function it appears in
+   14 |                                             SET_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN);             \
+      |                                                                    ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:21:41: note: in definition of macro 'SET_BIT'
+   21 | #define SET_BIT(REG,BIT)    ( (REG) |= (BIT) )
+      |                                         ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:15:45: error: 'tempvalue' undeclared (first use in this function); did you mean 'tempValue'?
+   15 |                                             tempvalue = READ_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN); \
+      |                                             ^~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:15:72: error: 'RCC_TypeDef_t' {aka 'struct <anonymous>'} has no member named 'AHB1ENR'; did you mean 'RCC_AHB1ENR'?
+   15 |                                             tempvalue = READ_BIT( RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN); \
+      |                                                                        ^~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:23:33: note: in definition of macro 'READ_BIT'
+   23 | #define READ_BIT(REG,BIT)    ( (REG) & (BIT) )
+      |                                 ^~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:16:76: error: stray '\' in program
+   16 |                                             UNUSED(tempvalue);             \      \
+      |                                                                            ^
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:13:46: warning: unused variable 'tempValue' [-Wunused-variable]
+   13 | #define RCC_AHB1ENR_GPIOAEN()   do{ uint32_t tempValue = 0;                      \
+      |                                              ^~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:48:32 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158:31: error: called object is not a function or function pointer
+  158 | #define RCC_AHB1ENR_GPIOAEN   (RCC_AHB1ENR_GPIOAEN_MASK)
+      |                               ^
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:49:45 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158:31: error: called object is not a function or function pointer
+  158 | #define RCC_AHB1ENR_GPIOAEN   (RCC_AHB1ENR_GPIOAEN_MASK)
+      |                               ^
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:52:10 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:157:34: error: called object is not a function or function pointer
+  157 | #define RCC_AHB1ENR_GPIOAEN_MASK (1 << RCC_AHB1ENR_GPIOAEN_POS)
+      |                                  ^
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158:31: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN_MASK'
+  158 | #define RCC_AHB1ENR_GPIOAEN   RCC_AHB1ENR_GPIOAEN_MASK
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:52:51 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:157:34: error: called object is not a function or function pointer
+  157 | #define RCC_AHB1ENR_GPIOAEN_MASK (0x1 << RCC_AHB1ENR_GPIOAEN_POS)
+      |                                  ^
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158:31: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN_MASK'
+  158 | #define RCC_AHB1ENR_GPIOAEN   RCC_AHB1ENR_GPIOAEN_MASK
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:57:13 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:157:36: warning: statement with no effect [-Wunused-value]
+  157 | #define RCC_AHB1ENR_GPIOAEN_MASK() (0x1 << RCC_AHB1ENR_GPIOAEN_POS)
+      |                                    ^
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158:31: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN_MASK'
+  158 | #define RCC_AHB1ENR_GPIOAEN   RCC_AHB1ENR_GPIOAEN_MASK
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    676	      8	   1568	   2252	    8cc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+15:00:22 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:30:2: warning: implicit declaration of function 'RCC_AHB1ENR_GPIOAEN'; did you mean 'RCC_AHB1ENR_GPIOAENN'? [-Wimplicit-function-declaration]
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+      |  RCC_AHB1ENR_GPIOAENN
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/my_drivers/my_driver_project/Debug/../Src/main.c:30: undefined reference to `RCC_AHB1ENR_GPIOAEN'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:65: my_driver_project.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:00:38 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:157:36: warning: statement with no effect [-Wunused-value]
+  157 | #define RCC_AHB1ENR_GPIOAEN_MASK() (0x1 << RCC_AHB1ENR_GPIOAEN_POS)
+      |                                    ^
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:158:31: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN_MASK'
+  158 | #define RCC_AHB1ENR_GPIOAEN   RCC_AHB1ENR_GPIOAEN_MASK
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_AHB1ENR_GPIOAEN'
+   30 |  RCC_AHB1ENR_GPIOAEN();
+      |  ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    676	      8	   1568	   2252	    8cc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+15:59:29 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    676	      8	   1568	   2252	    8cc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+15:59:40 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    676	      8	   1568	   2252	    8cc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+15:59:57 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    676	      8	   1568	   2252	    8cc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+16:07:39 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:161,
+                 from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:15:45: error: 'tempvalue' undeclared (first use in this function); did you mean 'tempValue'?
+   15 |                                             tempvalue = READ_BIT( RCC->RCC_AHB1ENR, RCC_AHB1ENR_GPIOAEN); \
+      |                                             ^~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_GPIOA_CLK_ENABLE'
+   30 |  RCC_GPIOA_CLK_ENABLE();
+      |  ^~~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:15:45: note: each undeclared identifier is reported only once for each function it appears in
+   15 |                                             tempvalue = READ_BIT( RCC->RCC_AHB1ENR, RCC_AHB1ENR_GPIOAEN); \
+      |                                             ^~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_GPIOA_CLK_ENABLE'
+   30 |  RCC_GPIOA_CLK_ENABLE();
+      |  ^~~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:16:80: error: stray '\' in program
+   16 |                                             UNUSED(tempvalue);                 \      \
+      |                                                                                ^
+../Src/main.c:30:2: note: in expansion of macro 'RCC_GPIOA_CLK_ENABLE'
+   30 |  RCC_GPIOA_CLK_ENABLE();
+      |  ^~~~~~~~~~~~~~~~~~~~
+C:/my_drivers/my_driver_project/my_driver/Inc/RCC_API.h:13:47: warning: unused variable 'tempValue' [-Wunused-variable]
+   13 | #define RCC_GPIOA_CLK_ENABLE()   do{ uint32_t tempValue = 0;                          \
+      |                                               ^~~~~~~~~
+../Src/main.c:30:2: note: in expansion of macro 'RCC_GPIOA_CLK_ENABLE'
+   30 |  RCC_GPIOA_CLK_ENABLE();
+      |  ^~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:16:36 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+16:19:57 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+16:21:33 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+16:33:12 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+16:36:16 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+16:45:12 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+16:46:59 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    740	      8	   1568	   2316	    90c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+16:52:20 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    740	      8	   1568	   2316	    90c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:08:18 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    756	      8	   1568	   2332	    91c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:10:00 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    756	      8	   1568	   2332	    91c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:28:01 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:33:00 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:34:22: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |                      ^
+../Src/main.c:34:12: warning: unused variable 'POOP' [-Wunused-variable]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |            ^~~~
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    788	      8	   1568	   2364	    93c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:34:30 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    788	      8	   1568	   2364	    93c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+17:36:35 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:34:22: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |                      ^
+../Src/main.c:34:12: warning: unused variable 'POOP' [-Wunused-variable]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |            ^~~~
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    824	      8	   1568	   2400	    960	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:38:03 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    824	      8	   1568	   2400	    960	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+17:39:57 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:34:22: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |                      ^
+../Src/main.c:34:12: warning: unused variable 'POOP' [-Wunused-variable]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |            ^~~~
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    824	      8	   1568	   2400	    960	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:44:45 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:34:22: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |                      ^
+../Src/main.c:34:12: warning: unused variable 'POOP' [-Wunused-variable]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |            ^~~~
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    788	      8	   1568	   2364	    93c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+17:47:29 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:34:22: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |                      ^
+../Src/main.c:34:12: warning: unused variable 'POOP' [-Wunused-variable]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |            ^~~~
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    788	      8	   1568	   2364	    93c	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.bin
+Finished building: my_driver_project.list
+ 
+ 
+18:10:20 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:34:22: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |                      ^
+../Src/main.c:34:12: warning: unused variable 'POOP' [-Wunused-variable]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |            ^~~~
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.bin
+Finished building: my_driver_project.list
+ 
+ 
+18:11:56 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+18:22:34 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+C:/my_drivers/my_driver_project/my_driver/Inc/my_stm32f407xx.h:146:23: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'GPIO_TypeDef_t *' {aka 'struct <anonymous> *'} [-Wincompatible-pointer-types]
+  146 | #define GPIOA         ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+      |                       ^
+../Src/main.c:30:21: note: in expansion of macro 'GPIOA'
+   30 |  uint32_t* gpioa  = GPIOA;
+      |                     ^~~~~
+../Src/main.c:31:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |                     ^
+../Src/main.c:32:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |                     ^
+../Src/main.c:33:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |                     ^
+../Src/main.c:34:22: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |                      ^
+../Src/main.c:34:12: warning: unused variable 'POOP' [-Wunused-variable]
+   34 |  uint32_t* POOP  =   &GPIOA->GPIOx_PUPDR;
+      |            ^~~~
+../Src/main.c:33:12: warning: unused variable 'ODR' [-Wunused-variable]
+   33 |  uint32_t* ODR  =   &GPIOA->GPIOx_ODR;
+      |            ^~~
+../Src/main.c:32:12: warning: unused variable 'OTYUPE' [-Wunused-variable]
+   32 |  uint32_t* OTYUPE = &GPIOA->GPIOx_OTYPER;
+      |            ^~~~~~
+../Src/main.c:31:12: warning: unused variable 'moder' [-Wunused-variable]
+   31 |  uint32_t* moder  = &GPIOA->GPIOx_MODER;
+      |            ^~~~~
+../Src/main.c:30:12: warning: unused variable 'gpioa' [-Wunused-variable]
+   30 |  uint32_t* gpioa  = GPIOA;
+      |            ^~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+18:26:37 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/my_drivers/my_driver_project/my_driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "my_driver_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\my_drivers\my_driver_project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="my_driver_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: my_driver_project.elf
+ 
+arm-none-eabi-size   my_driver_project.elf 
+arm-none-eabi-objdump -h -S  my_driver_project.elf  > "my_driver_project.list"
+arm-none-eabi-objcopy  -O binary  my_driver_project.elf  "my_driver_project.bin"
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: my_driver_project.list
+Finished building: my_driver_project.bin
+ 
+ 
+18:26:42 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 
+18:26:57 **** Incremental Build of configuration Debug for project my_driver_project ****
+make -j4 all 
+arm-none-eabi-size   my_driver_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+    708	      8	   1568	   2284	    8ec	my_driver_project.elf
+Finished building: default.size.stdout
+ 

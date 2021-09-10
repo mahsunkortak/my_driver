@@ -1,0 +1,163 @@
+/*
+ * my_stm32f407xx.h
+ *
+ *  Created on: 9 Eyl 2021
+ *      Author: Kortak
+ */
+
+#ifndef INC_MY_STM32F407XX_H_
+#define INC_MY_STM32F407XX_H_
+
+#include <stdint.h>
+
+#define  __IO  volatile
+
+
+
+/*
+ * FUNCTION MACROS
+ */
+
+#define SET_BIT(REG,BIT)				( (REG) |= (BIT) )
+#define CLEAR_BIT(REG,BIT)				( (REG) &= ~(BIT) )
+#define READ_BIT(REG,BIT)				( (REG) & (BIT) )
+#define UNUSED(x)						(void)x
+
+
+/*
+ *  MEMORY BASE ADDRESSES
+*/
+
+#define FLASH_BASE_ADDR                 (0x08000000UL)   /* FLASH BASE ADDRESS (UP TO 1MB)      */
+#define SRAM1_BASE_ADDR                 (0X20000000UL)   /* SRAM1 BASE ADDRES  (UP TO 112KB)    */
+#define SRAM2_BASE_ADDR                	(0X2001C000UL)
+
+
+/*
+ * PERIPHERALS BASE ADDRESSES
+ *
+ */
+#define PERIPH_ALL_BASE_ADDR            (0x40000000UL)
+#define APB1_BASE_ADDR 					(0x40000000UL)
+#define APB2_BASE_ADDR					(0X40010000UL)
+#define AHB1_BASE_ADDR					(0x40020000UL)
+#define AHB2_BASE_ADDR                  (0x50000000UL)
+#define AHB3_BASE_ADDR					(0xA0000000UL)
+
+/*
+ * APB1 PERIPHERALS BASE ADDRESSES
+ */
+
+#define TIM2_BASE_ADDR					(APB1_BASE_ADDR)
+#define TIM3_BASE_ADDR					(APB1_BASE_ADDR + 0400UL)
+#define TIM4_BASE_ADDR					(APB1_BASE_ADDR + 0800UL)
+
+#define SPI2_BASE_ADDR					(APB1_BASE_ADDR + 3800UL)
+#define SPI3_BASE_ADDR					(APB1_BASE_ADDR + 3C00UL)
+#define USART2_BASE_ADDR                (APB1_BASE_ADDR + 4400UL)
+#define USART3_BASE_ADDR				(APB1_BASE_ADDR + 4800UL)
+
+#define UART4_BASE_ADDR					(APB1_BASE_ADDR + 4C00UL)
+#define UART5_BASE_ADDR			        (APB1_BASE_ADDR + 5000UL)
+#define I2C1_BASE_ADDR         			(APB1_BASE_ADDR + 5400UL)
+#define I2C2_BASE_ADDR					(APB1_BASE_ADDR + 5800UL)
+#define I2C3_BASE_ADDR					(APB1_BASE_ADDR + 5C00UL)
+
+/*
+ *  APB2 PERIPHERALS BASE ADDRESSES
+ */
+
+#define TIM1_BASE_ADDR					(APB2_BASE_ADDR)
+#define TIM8_BASE_ADDR					(APB2_BASE_ADDR + 10400UL)
+#define USART1_BASE_ADDR                (APB2_BASE_ADDR + 11000UL)
+#define USART6_BASE_ADDR				(APB2_BASE_ADDR + 11400UL)
+#define SP1_BASE_ADDR					(APB2_BASE_ADDR + 13000UL)
+#define SP4_BASE_ADDR					(APB2_BASE_ADDR + 13400UL)
+#define SYSCFG_BASE_ADDR      			(APB2_BASE_ADDR + 13800UL)
+#define EXTI_BASE_ADDR					(APB2_BASE_ADDR + 13C00UL)
+
+/*
+ *  AHB1 PERIPHERALS BASE ADDRESSES
+ */
+
+#define GPIOA_BASE_ADDR					(AHB1_BASE_ADDR)
+#define GPIOB_BASE_ADDR					(AHB1_BASE_ADDR + 400UL)
+#define GPIOC_BASE_ADDR					(AHB1_BASE_ADDR + 800UL)
+#define GPIOD_BASE_ADDR					(AHB1_BASE_ADDR + C00UL)
+#define GPIOE_BASE_ADDR					(AHB1_BASE_ADDR + 1000UL)
+
+#define RCC_BASE_ADDR					(AHB1_BASE_ADDR + 3800UL)
+
+/*
+ *  PERIPHERALS STRUCTURES
+ */
+
+typedef struct {
+
+	__IO uint32_t GPIOx_MODER;
+	__IO uint32_t GPIOx_OTYPER;
+	__IO uint32_t GPIOx_OSPEEDR;
+	__IO uint32_t GPIOx_PUPDR;
+	__IO uint32_t GPIOx_IDR;
+	__IO uint32_t GPIOx_ODR;
+	__IO uint32_t GPIOx_BSRR;
+	__IO uint32_t GPIOx_LCKR;
+	__IO uint32_t GPIOx_AFRL[2];
+
+
+}GPIO_TypeDef_t;
+
+typedef struct {
+
+	__IO uint32_t CR;
+	__IO uint32_t RCC_PLLCFGR;
+	__IO uint32_t RCC_CFGR;
+	__IO uint32_t RCC_CIR;
+	__IO uint32_t RCC_AHB1RSTR;
+	__IO uint32_t RCC_AHB2STR;
+	__IO uint32_t RCC_AHB3RSTR;
+	__IO uint32_t RESERVED0;
+	__IO uint32_t RCC_APB1RSTR;
+	__IO uint32_t RCC_APB2RSTR;
+	__IO uint32_t RESERVED1;
+	__IO uint32_t RESERVED2;
+    __IO uint32_t RCC_AHB1ENR;
+    __IO uint32_t RCC_AHB2ENR;
+    __IO uint32_t RCC_AHB3ENR;
+    __IO uint32_t RESERVED3;
+    __IO uint32_t RCC_APB1ENR;
+    __IO uint32_t RCC_APB2ENR;
+    __IO uint32_t RESERVED4[2];
+
+    __IO uint32_t RCC_AHB1LPENR;
+    __IO uint32_t RCC_AHB2LPENR;
+    __IO uint32_t RCC_AHB3LPENR;
+    __IO uint32_t RESERVED5;
+    __IO uint32_t RCC_APB1LPENR;
+    __IO uint32_t RCC_APB2LPENR;
+    __IO uint32_t RESERVED6[2];
+    __IO uint32_t RCC_BDCR;
+    __IO uint32_t RCC_CSR;
+    __IO uint32_t RESERVED7[2];
+    __IO uint32_t RCC_SSCGR;
+    __IO uint32_t RCC_PLLI2SCFGR;
+
+}RCC_TypeDef_t;
+
+#define GPIOA 					   ((GPIO_TypeDef_t*)(GPIOA_BASE_ADDR))
+#define GPIOB 					   ((GPIO_TypeDef_t*)(GPIOB_BASE_ADDR))
+#define GPIOC 					   ((GPIO_TypeDef_t*)(GPIOC_BASE_ADDR))
+#define GPIOD 					   ((GPIO_TypeDef_t*)(GPIOD_BASE_ADDR))
+#define GPIOE 					   ((GPIO_TypeDef_t*)(GPIOE_BASE_ADDR))
+
+#define RCC                        ((RCC_TypeDef_t*)(RCC_BASE_ADDR))
+
+
+#define RCC_AHB1ENR_GPIOAEN_POS		(0U)
+#define RCC_AHB1ENR_GPIOAEN_MASK	(0x1 << RCC_AHB1ENR_GPIOAEN_POS)
+#define RCC_AHB1ENR_GPIOAEN 		RCC_AHB1ENR_GPIOAEN_MASK
+
+
+#include "RCC_API.h"
+
+#endif /* INC_MY_STM32F407XX_H_ */
